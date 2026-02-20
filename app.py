@@ -165,11 +165,11 @@ model = load_model()
 compute_device = get_device()
 
 DEMO_SCENES = {
-    "01. Urban Crosswalk": "demo1.mp4",
-    "02. Transit Station": "demo2.mp4",
-    "03. Retail Escalator": "demo3.mp4",
-    "04. Campus Square": "demo4.mp4",
-    "05. Indoor Hallway": "demo5.mp4"
+    "01. Demo 1": "demo1.mp4",
+    "02. Demo 2": "demo2.mp4",
+    "03. Demo 3": "demo3.mp4",
+    "04. Demo 4": "demo4.mp4",
+    "05. Demo 5": "demo5.mp4"
 }
 
 st.markdown(f"""
