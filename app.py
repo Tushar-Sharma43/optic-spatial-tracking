@@ -1,10 +1,13 @@
+import os
+import torch
+# PyTorch/Streamlit Cloud Hotfix
+torch.classes.__path__ = [] 
+
 import streamlit as st
 import cv2
 import numpy as np
 from ultralytics import YOLO
 import tempfile
-import torch
-import os
 import time
 
 st.set_page_config(
@@ -165,11 +168,11 @@ model = load_model()
 compute_device = get_device()
 
 DEMO_SCENES = {
-    "01. Demo 1": "demo1.mp4",
-    "02. Demo 2": "demo2.mp4",
-    "03. Demo 3": "demo3.mp4",
-    "04. Demo 4": "demo4.mp4",
-    "05. Demo 5": "demo5.mp4"
+    "Demo 1": "demo1.mp4",
+    "Demo 2": "demo2.mp4",
+    "Demo 3": "demo3.mp4",
+    "Demo 4": "demo4.mp4",
+    "Demo 5": "demo5.mp4"
 }
 
 st.markdown(f"""
@@ -210,7 +213,7 @@ with st.sidebar:
         video_file = None
         st.markdown('<div style="height:6px"></div>', unsafe_allow_html=True)
         selected_demo = st.selectbox("Select Demo Scene", list(DEMO_SCENES.keys()), label_visibility="collapsed")
-        st.markdown(f'<div class="sb-note">Active: {selected_demo.split(". ")[1]}</div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="sb-note">Active: {selected_demo}</div>', unsafe_allow_html=True)
 
     st.markdown('<div class="sb-sec">Parameters</div>', unsafe_allow_html=True)
     conf_threshold = st.slider(
@@ -235,7 +238,7 @@ with st.sidebar:
     """, unsafe_allow_html=True)
 
 col_feed, col_stats = st.columns([3, 1], gap="large")
-source_display = "Upload" if video_source == "Upload File" else f"Demo {selected_demo.split('.')[0]}"
+source_display = "Upload" if video_source == "Upload File" else selected_demo
 
 with col_stats:
     st.markdown('<div class="col-label">Detection</div>', unsafe_allow_html=True)
