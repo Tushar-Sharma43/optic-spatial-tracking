@@ -8,7 +8,7 @@
 
 **OPTIC** is a device-agnostic, tracking-by-detection analytics pipeline designed for high-precision spatial monitoring. By merging SOTA object detection with temporal persistence, OPTIC transforms raw video into a "virtual turnstile," providing actionable telemetry without the overhead of expensive hardware sensors.
 
-[**Explore the Live Dashboard**](https://optic-spatial-track.streamlit.app) • [**View Demo Video**](#)
+[**Explore the Live Dashboard**](https://optic-spatial-track.streamlit.app) 
 
 ---
 
