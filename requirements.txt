@@ -4,3 +4,4 @@ torchvision
 streamlit
 ultralytics
 opencv-python-headless
+lapx
